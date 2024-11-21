@@ -1,0 +1,228 @@
+body {
+    background-color: white;
+}
+
+.logo_img {
+    width: 250px;
+    height: 120px;
+    padding-top: 20px;
+    margin-left: 500px;
+
+}
+
+.logo {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+#nav {
+
+    height: 70px;
+    background: linear-gradient(90deg, rgb(216, 191, 216) 0%, rgb(138, 43, 226) 70%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+    /* Asegura que el navbar esté encima del slider */
+}
+
+header {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-area {
+    display: flex;
+    padding-top: 40px;
+    padding-right: 30px;
+    justify-content: center;
+    /* Centrar los iconos horizontalmente */
+    flex-wrap: wrap;
+    /* Permitir que los iconos se ajusten en varias líneas si es necesario */
+}
+
+.icon-area .icon {
+    margin: 2px;
+    /* Añadir margen alrededor de cada icono */
+}
+
+.icon-area .icon a {
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    font-size: 25px;
+    display: block;
+    line-height: 43px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #4b0082;
+    overflow: hidden;
+    box-shadow: 15px 15px 48px rgba(0, 0, 0, 0.15);
+}
+
+.icon-area .icon a i {
+    position: relative;
+    color: blueviolet;
+    transition: 1s;
+}
+
+footer {
+    display: flex;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(203, 191, 216), rgb(93, 22, 207) 70%);
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+    /*Mantener dtras del main*/
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    /* Centra las tarjetas horizontalmente */
+    width: 100%;
+    /* Asegura que las tarjetas ocupen todo el ancho disponible */
+    max-width: 1200px;
+    /* Limita el ancho máximo */
+    gap: 40px;
+    /* Añade más espacio entre las tarjetas */
+    margin-top: 20px;
+    /* Añade espacio entre el título y las tarjetas */
+}
+
+.card,
+.elemento {
+    flex: 1;
+    /* Permite que las tarjetas crezcan igualmente */
+    padding: 2em;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    /* Asegura que los elementos hijos se posicionen correctamente */
+    display: flex;
+    /* Añade flexbox para centrar el contenido */
+    flex-direction: column;
+    /* Asegura que los elementos se apilen verticalmente */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+}
+
+.circular-img {
+    width: 150px;
+    /* Ajusta el tamaño según tus necesidades */
+    height: 150px;
+    /* Ajusta el tamaño según tus necesidades */
+    border-radius: 50%;
+    /* Hace que las imágenes sean circulares */
+    object-fit: cover;
+    /* Asegura que la imagen cubra el contenedor */
+    margin-bottom: 1em;
+    /* Espacio entre la imagen y el texto */
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::after,
+.card::before {
+    content: '';
+    position: absolute;
+    width: 105%;
+    height: 105%;
+    /* Para el degradado */
+    background-image: conic-gradient(from var(--angle), transparent 70%, #4b0082, #00ff00);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Cambiado de translate a transform */
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.card::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+        /* Cambiado de 380deg a 360deg */
+    }
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 480px) {
+    .logo_img {
+        width: 200px;
+        height: 100px;
+        padding-top: 10px;
+        margin-left: 10px;
+
+    }
+
+    .logo {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .icon-area .icon a
+    {
+        width: 30px;
+        height: 30px;
+        background: #ffffff;
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo_img {
+        width: 200px;
+        height: 100px;
+        padding-top: 20px;
+        margin-left: 100px;
+    }
+
+    header {
+        height: auto;
+    }
+
+    #nav {
+        height: auto;
+        z-index: 1000;
+        /* Asegura que el navbar esté encima del slider */
+    }
+
+    .container-fluid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .custom-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+
+}

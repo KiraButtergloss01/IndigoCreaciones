@@ -1,2 +1,1 @@
-# IndigoCreaciones
-Ecommerce proyecto final CS50
+pip install -r requirements.txt

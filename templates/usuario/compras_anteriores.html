@@ -1,8 +1,40 @@
-{% extends "layout.html" %}
+{% extends "user_base.html" %}
 
-{% block title %}
-
-{% endblock %}
+{% block title %}Compras Anteriores{% endblock %}
 
 {% block main %}
+<h1>Compras Anteriores</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Pedido</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Fecha</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for compra in compras %}
+        <tr>
+            <td>{{ compra.id }}</td>
+            <td>{{ compra.producto_nombre }}</td>
+            <td>{{ compra.cantidad }}</td>
+            <td>{{ compra.precio }}</td>
+            <td>{{ compra.fecha_hora }}</td>
+            <td>
+                {% if compra.comentario %}
+                {{ compra.comentario }}
+                {% else %}
+                <form action="{{ url_for('comentar', compra_id=compra.id) }}" method="post">
+                    <textarea name="comentario" class="form-control" required></textarea>
+                    <button type="submit" class="btn btn-primary mt-2">Comentar</button>
+                </form>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

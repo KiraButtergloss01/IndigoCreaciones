@@ -1,0 +1,51 @@
+{% extends "admin_base.html" %}
+
+{% block title %}Gestionar Pedidos{% endblock %}
+
+{% block main %}
+<h1>Gestionar Pedidos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Pedido</th>
+            <th>Usuario</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Dirección de Envío</th>
+            <th>Estado</th>
+            <th>Notas</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pedido in pedidos %}
+        <tr>
+            <td>{{ pedido.id }}</td>
+            <td>{{ pedido.usuario_id }}</td>
+            <td>{{ pedido.producto_id }}</td>
+            <td>{{ pedido.cantidad }}</td>
+            <td>{{ pedido.direccion_envio }}</td>
+            <td>
+                <form action="{{ url_for('actualizar_estado', pedido_id=pedido.id) }}" method="post">
+                    <select name="estado" class="form-control">
+                        <option value="Pendiente" {% if pedido.estado == 'Pendiente' %}selected{% endif %}>Pendiente</option>
+                        <option value="Enviado" {% if pedido.estado == 'Enviado' %}selected{% endif %}>Enviado</option>
+                        <option value="Entregado" {% if pedido.estado == 'Entregado' %}selected{% endif %}>Entregado</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary mt-2">Actualizar</button>
+                </form>
+            </td>
+            <td>
+                <form action="{{ url_for('actualizar_notas', pedido_id=pedido.id) }}" method="post">
+                    <textarea name="notas" class="form-control">{{ pedido.notas }}</textarea>
+                    <button type="submit" class="btn btn-primary mt-2">Guardar Notas</button>
+                </form>
+            </td>
+            <td>
+                <a href="{{ url_for('detalle_pedido', pedido_id=pedido.id) }}" class="btn btn-info">Ver Detalles</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

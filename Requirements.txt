@@ -1,0 +1,8 @@
+flask
+Flask-Session
+werkzeug
+cs50
+paypalrestsdk
+flask-wtf
+wtforms
+requests

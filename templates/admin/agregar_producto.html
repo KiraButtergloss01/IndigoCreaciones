@@ -1,0 +1,31 @@
+{% extends "admin_base.html" %}
+
+{% block title %}Agregar Producto{% endblock %}
+
+{% block main %}
+<h1>Agregar Producto</h1>
+<form action="{{ url_for('agregar_producto') }}" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.categoria.label(class="form-label") }}
+        {{ form.categoria(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.nombre.label(class="form-label") }}
+        {{ form.nombre(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.descripcion.label(class="form-label") }}
+        {{ form.descripcion(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.precio.label(class="form-label") }}
+        {{ form.precio(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.imagen.label(class="form-label") }}
+        {{ form.imagen(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+</form>
+{% endblock %}

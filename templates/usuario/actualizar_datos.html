@@ -1,0 +1,26 @@
+{% extends "user_base.html" %}
+
+{% block title %}Actualizar Datos{% endblock %}
+
+{% block main %}
+<h1>Actualizar Datos</h1>
+<form action="{{ url_for('actualizar_datos') }}" method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" class="form-control" value="{{ usuario.nombre }}" required>
+    </div>
+    <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" class="form-control" value="{{ usuario.apellido }}" required>
+    </div>
+    <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" class="form-control" value="{{ usuario.telefono }}" required>
+    </div>
+    <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" class="form-control" value="{{ usuario.correo }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar Datos</button>
+</form>
+{% endblock %}

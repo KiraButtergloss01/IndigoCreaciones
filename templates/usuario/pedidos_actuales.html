@@ -1,0 +1,29 @@
+{% extends "user_base.html" %}
+
+{% block title %}Pedidos Actuales{% endblock %}
+
+{% block main %}
+<h1>Pedidos Actuales</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Pedido</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pedido in pedidos %}
+        <tr>
+            <td>{{ pedido.id }}</td>
+            <td>{{ pedido.producto_nombre }}</td>
+            <td>{{ pedido.cantidad }}</td>
+            <td>{{ pedido.estado }}</td>
+            <td>{{ pedido.fecha_hora }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

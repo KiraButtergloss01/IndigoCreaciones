@@ -1,54 +1,157 @@
-{% extends "layout.html" %}
-
-{% block title %}
-
-{% endblock %}
-
-{% block main %}
-<section class="product-section container">
-    <h3>Modern Home Decor Essentials</h3>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="dark-vase.jpg" class="card-img-top" alt="Dark Vase">
-                <div class="card-body">
-                    <h5 class="card-title">Dark Vase</h5>
-                    <p class="card-text">$29.00</p>
-                </div>
-            </div>
+{% extends "layout.html" %} 
+{% block title %} ¡Bienvenidos! {% endblock %} 
+{% block main %} 
+<section id="carouselExampleAutoplaying" class="carousel slide pointer-event" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item">
+            <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
+                src ="statics/src/lilas.jpg" role="img" aria-label="Placeholder: First slide"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555"
+                    dy=".3em">First slide</text>
+            </img>
         </div>
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="soap.jpg" class="card-img-top" alt="Soap">
-                <div class="card-body">
-                    <h5 class="card-title">Soap</h5>
-                    <p class="card-text">$89.00</p>
-                </div>
-            </div>
+        <div class="carousel-item active">
+            <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
+            src ="/statics/src/lilas.jpg" role="img" aria-label="Placeholder: Second slide"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder 1</title>
+                <rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444"
+                    dy=".3em">Second slide</text>
+            </img>
         </div>
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="tall-vase.jpg" class="card-img-top" alt="Tall Vase">
-                <div class="card-body">
-                    <h5 class="card-title">Tall Vase</h5>
-                    <p class="card-text">$39.00</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="candle-holder.jpg" class="card-img-top" alt="Candle Holder">
-                <div class="card-body">
-                    <h5 class="card-title">Candle Holder</h5>
-                    <p class="card-text">$19.00</p>
-                </div>
-            </div>
+        <div class="carousel-item">
+            <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
+            src ="statics/src/lilas.jpg" role="img" aria-label="Placeholder: Third slide"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333"
+                    dy=".3em">Third slide</text>
+            </img>
         </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </section>
-<h3>Showcase a SPECIAL OFFER</h3>
-<p>Subscribe to our newsletter for exclusive offers and updates!</p>
-<input type="email" placeholder="Enter your email" class="form-control w-50 mx-auto">
-<button class="btn btn-primary mt-3">Subscribe</button>
+<div class="que_hacemos">
+    <div class="titulo"></div>
+    <div class="cards_containers">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+</div>
+<section class="productosdestacados">
+    <div class="titulo"></div>
+    <div class="cards_containers">
+        <div class="card" style="width: 18rem;">
+            <img src="/statics/src/lilas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="/statics/src/lilas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="/statics/src/lilas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
 </section>
-{% endblock %}
+<section class="banner">
+
+</section>
+<section class="comentarios">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/statics/src/lilas.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title 1</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/statics/src/lilas.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title 2</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/statics/src/lilas.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title 3</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+<section class="sobre_mi">
+    <div class="rectangle">
+
+    </div>
+</section>
+<script>
+    const slider = document.querySelector('.comentarios');
+const cards = document.querySelectorAll('.comentarios .card');
+let index = 0;
+const interval = 3000;
+
+function moveSlide(index) {
+    slider.scrollTo({
+        left: index * slider.clientWidth,
+        behavior: 'smooth'
+    });
+}
+
+function autoSlide() {
+    index++;
+    if (index >= cards.length) {
+        index = 0;
+    }
+    moveSlide(index);
+}
+
+setInterval(autoSlide, interval);
+</script>
+{% endblock %} 
